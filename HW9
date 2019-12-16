@@ -1,0 +1,178 @@
+
+#3
+
+struct time{
+	int min;
+	int sec;
+	int hour;
+};
+
+int main()
+{
+	struct time *p;
+    p=&time;
+    p->sec = 10;
+}
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+#4
+
+struct distance{
+	int x;
+	int y;
+};
+
+int main()
+{
+	struct distance mn;
+	printf("Enter point x and point y: ");
+	scanf("%d%d", &mn.x, &mn.y);
+	int a = mn.x;
+	int b = mn.y;
+	int c=a-b;
+	printf("Distance is: %d". mn(c));
+}
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+#6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+#7
+
+
+Union
+---------------------
+
+#include <stdio.h>
+
+union Job
+{
+   float salary;
+   int workerNo;
+} j;
+int main()
+{
+   j.salary = 12.3;
+   j.workerNo = 100;
+   printf("Salary = %.1f\n", j.salary);
+   printf("Number of workers = %d", j.workerNo);
+   return 0;
+}
+
+-----------------------------------------------------
+
+
+Enumerations
+-----------------------
+
+#include<stdio.h>
+
+enum week{Mon=10, Tue, Wed, Thur, Fri=10, Sat=16, Sun};
+enum day{Mond, Tues, Wedn, Thurs, Frid=18, Satu=11, Sund};
+
+int main() {
+   printf("The value of enum week: %d\t%d\t%d\t%d\t%d\t%d\t%d\n\n",Mon , Tue, Wed, Thur, Fri, Sat, Sun);
+   printf("The default value of enum day: %d\t%d\t%d\t%d\t%d\t%d\t%d",Mond , Tues, Wedn, Thurs, Frid, Satu, Sund);
+   return 0;
+}
+
+
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+
+
+#8 (Bonus)
+
+
+#include <stdio.h> 
+#include <stdlib.h> 
+
+struct Node { 
+    int data; 
+    struct Node* next; 
+}; 
+  
+void push(struct Node** head_ref, int new_data) { 
+    struct Node* new_node = (struct Node*)malloc(sizeof(struct Node)); 
+    new_node->data = new_data; 
+    new_node->next = (*head_ref); 
+    (*head_ref) = new_node; 
+} 
+  
+int detectloop(struct Node* list) { 
+    struct Node *slow_p = list, *fast_p = list; 
+    while (slow_p && fast_p && fast_p->next) { 
+        slow_p = slow_p->next; 
+        fast_p = fast_p->next->next; 
+        if (slow_p == fast_p) { 
+            printf("Found Loop"); 
+            return 1; 
+        } 
+    } 
+    return 0; 
+} 
+  
+
+int main() 
+{ 
+    struct Node* head = NULL; 
+    push(&head, 20); 
+    push(&head, 4); 
+    push(&head, 15); 
+    push(&head, 10); 
+    head->next->next->next->next = head; 
+    detectloop(head); 
+  
+    return 0; 
+} 
+
+
+
+
+
+
+
+
+
+
+
