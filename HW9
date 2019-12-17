@@ -180,22 +180,31 @@ int main()
 
 #4
 
-struct distance{
-	int x;
-	int y;
-};
 
-int main()
-{
-	struct distance mn;
-	printf("Enter point x and point y: ");
-	scanf("%d%d", &mn.x, &mn.y);
-	int a = mn.x;
-	int b = mn.y;
-	int c=a-b;
-	printf("Distance is: %d". mn(c));
+#include<stdio.h>
+#include<math.h>
+
+float getDistance(float x1, float y1, float z1, float x2, float y2, float z2){
+   return sqrt(pow(x1-x2, 2) + pow(y1-y2,2) + pow(z2-z1,2));
 }
 
+int main() {
+   float x1, y1, z1, x2, y2, z2;
+   printf("Enter x1: ");
+   scanf("%f",&x1);
+   printf("Enter y1: ");
+   scanf("%f",&y1);
+   printf("Enter z1: ");
+   scanf("%f",&z1);
+   printf("Enter x2: ");
+   scanf("%f",&x2);
+   printf("Enter y2: ");
+   scanf("%f",&y2);
+   printf("Enter z2: ");
+   scanf("%f",&z2);
+   printf("Distance = %f\n", getDistance(x1, y1, z1, x2, y2, z2));
+   return 0;
+}
 
 
 
