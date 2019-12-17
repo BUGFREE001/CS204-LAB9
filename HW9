@@ -42,6 +42,59 @@ int main()
 
 
 
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+#5
+
+
+
+
+#include <stdio.h>
+
+struct student
+{
+int rollno;
+char *name;
+int age;
+};
+
+struct student struct_function(struct student s1)
+{
+s1.rollno = 20;
+s1.name = "Hari";
+s1.age = 22;
+return s1;
+}
+
+int main()
+{
+struct student s1;
+s1 = struct_function(s1);
+  
+printf("Roll no: %d\n",s1.rollno);
+printf("Name: %s\n",s1.name);
+printf("Age: %d\n",s1.age);
+return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ----------------------------------------------------------------------------------------------------------------------------
 
 
