@@ -49,7 +49,52 @@ int main()
 
 
 
+#include <stdio.h>
 
+typedef struct complex
+{
+  
+int realNumber;
+int imgNumber;
+} complex;
+
+int main()
+{
+
+complex num1, num2, sum, sub;
+ 
+printf("Enter the real and imaginary part of first complex number: ");
+scanf("%d%d", &num1.realNumber, &num1.imgNumber);
+printf("Enter the real and imaginary part of second complex number: ");
+scanf("%d%d", &num2.realNumber, &num2.imgNumber);
+  
+if(num1.imgNumber >= 0)
+printf("\nFirst complex number is = %d + %di\n", num1.realNumber, num1.imgNumber);
+else
+printf("\nFirst complex number is = %d %di\n", num1.realNumber, num1.imgNumber);
+if(num2.imgNumber >= 0)
+printf("Second complex number is = %d + %di\n", num2.realNumber, num2.imgNumber);
+else
+printf("Second complex number is = %d %di\n", num2.realNumber, num2.imgNumber);
+
+sum.realNumber = num1.realNumber + num2.realNumber;
+sum.imgNumber = num1.imgNumber + num2.imgNumber;
+  
+sub.realNumber = num1.realNumber - num2.realNumber;
+sub.imgNumber = num1.imgNumber - num2.imgNumber;
+
+if(sum.imgNumber >= 0)
+printf("\nSum = %d + %di\n", sum.realNumber, sum.imgNumber);
+else
+printf("\nSum = %d %di\n", sum.realNumber, sum.imgNumber);
+  
+if(sub.imgNumber >= 0)
+printf("Subtraction = %d + %di\n", sub.realNumber, sub.imgNumber);
+else
+printf("Subtraction = %d %di\n", sub.realNumber, sub.imgNumber);
+  
+return 0;
+}
 
 
 
