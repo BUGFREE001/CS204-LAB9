@@ -1,4 +1,117 @@
 
+#2
+
+
+//invalid because, a self referential structure can not be incomplete
+
+//here if we want to make it work, then b should of a pointer type
+
+struct a {
+
+int x;
+
+struct a b;
+
+};
+
+_________________________________________________________________
+
+This is valid
+
+struct a {
+
+int x;
+
+struct a *b;
+
+};
+
+_________________________________________________________________
+
+//this is invalid
+
+//No matter we are defining the name of the structure but the name definition is after the structure-name use
+
+
+
+typedef struct a {
+
+int x;
+
+aType *b;
+
+}aType;
+
+_________________________________________________________________
+
+//this is valid
+
+//beacuse first we are defining the name of the structure, and after that we are using it.
+
+typedef struct a aType;
+
+struct a {
+
+int x;
+
+aType *b;
+
+};
+
+_________________________________________________________________
+
+//invalid
+
+//because no matter we are defining name of the structre
+
+//but we are using that name before the actual structure is even defined.
+
+int main(void) {
+
+typedef struct a aType;
+
+aType var;
+
+struct a{
+
+int c;
+
+aType *b;
+
+};
+
+}
+
+_________________________________________________________________
+
+struct {
+
+char a;
+
+short b;
+
+int c;
+
+}temp;
+
+size of this structure is 7 bytes, (1 byte for char, 2 bytes for short, 4 bytes for int)
+
+But due tp structure padding, compiler will allocate size 8 bytes.
+
+Answer is 8 Bytes
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------
+
+
+
+
 #3
 
 struct time{
