@@ -1,5 +1,50 @@
 
+#1
+
+
+program 1. where yy structure is given, Structure variable should be declare like this otherwise error occur. 
+           Also return 0 is missing.
+
+
+----------------------------------------------
+
+program 2. In this program struct is not closed using semicolon, and non pointer conversion is used here which is not allowed in c. 
+           Also return 0 is missing.A
+
+
+----------------------------------------------
+
+
+program 3: There is no error in this program. succesful run output is
+
+
+			origin is (00)
+
+			origin is (00)
+
+			only return 0 is missing.
+		
+
+----------------------------------------------
+
+
+program 4: lots of error are present in this program.
+	   we can not create struct variable before its definition.
+	   here struct name is student but used like a variable and rollno is not given but it is used as a variable 
+	   and also return 0 is missing because int main is used to avoid this void main should be used.
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------------
+
+
+
 #2
+
+
 
 
 //invalid because, a self referential structure can not be incomplete
@@ -261,19 +306,6 @@ printf("Subtraction = %d %di\n", sub.realNumber, sub.imgNumber);
   
 return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
