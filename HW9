@@ -159,19 +159,40 @@ Answer is 8 Bytes
 
 #3
 
-struct time{
-	int min;
-	int sec;
-	int hour;
-};
 
+
+
+#include <stdio.h>
+
+//structure
+struct Time
+{
+int min;
+int sec;
+int hours;
+};
 int main()
 {
-	struct time *p;
-    p=&time;
-    p->sec = 10;
+//structure pointer declaration
+struct Time *times;
+  
+//structure variable declaration
+struct Time t;
+  
+//assign the structure time pointer variable
+times = &t;
+  
+//assign value using structure pointer
+times->min = 5;
+times->sec = 10;
+times->hours = 12;
+  
+//display value using pointer variable
+printf("Min = %d\n", times->min);
+printf("Sec = %d\n", times->sec);
+printf("Hours = %d\n", times->hours);
+return 0;
 }
-
 
 
 
